@@ -26,3 +26,22 @@ def dense_block(x):
         print(x.get_shape())
 
     return x
+
+def transition_block(x):
+    print('transition block')
+    print(x.get_shape())
+
+    filters = x.get_shape().as_list()[-1]
+    filters = int(filters * DENSE_NET_TRANSITION_COMPRESSION)
+
+    x = Conv3D(filters=filters, kernel_size=(1, 1, 1), padding='same')(x)
+    x = AveragePooling3D(pool_size=(2, 2, 2), padding='same')(x)
+    print(x.get_shape())
+
+    return x
+
+def DenseNet3D(inputs,num_classes):
+    inputs = inputs
+    x = Conv3D(DENSE_NET_INITIAL_CONV_DIM, (3, 3, 3), padding='same')(inputs)
+    print('input')
+    print(x.get_shape())
