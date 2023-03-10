@@ -45,3 +45,12 @@ def DenseNet3D(inputs,num_classes):
     x = Conv3D(DENSE_NET_INITIAL_CONV_DIM, (3, 3, 3), padding='same')(inputs)
     print('input')
     print(x.get_shape())
+
+    for i in range(DENSE_NET_BLOCKS):
+        x = dense_block(x)
+        if i != DENSE_NET_BLOCKS - 1:
+            x = transition_block(x)
+
+    print('top')
+    x = GlobalAveragePooling3D()(x)
+    print(x.get_shape())
