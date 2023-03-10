@@ -54,3 +54,12 @@ def DenseNet3D(inputs,num_classes):
     print('top')
     x = GlobalAveragePooling3D()(x)
     print(x.get_shape())
+
+    if DENSE_NET_ENABLE_DROPOUT:
+        x = Dropout(DENSE_NET_DROPOUT)(x)
+
+    x = Dense(units=num_classes,activation='sigmoid')(x)
+    print(x.get_shape())
+
+    model = Model(inputs=inputs, outputs=x)
+    return model
