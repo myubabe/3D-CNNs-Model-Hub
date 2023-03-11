@@ -50,3 +50,12 @@ def conv_block(input, nb_filter, kernal_size=(3, 3, 3), dilation_rate=1,
                    padding='same',
                    use_bias=False,
                    kernel_regularizer=tf.keras.regularizers.l2(weight_decay))(x)
+        x = tf.keras.layers.BatchNormalization(epsilon=1.1e-5)(x)
+        x = tf.nn.relu6(x)
+
+    x = tf.keras.layers.Conv3D(nb_filter, kernal_size,
+               dilation_rate=dilation_rate,
+               kernel_initializer='he_normal',
+               padding='same',
+               use_bias=False)(x)
+    if dropout_rate:
