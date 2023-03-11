@@ -59,3 +59,14 @@ def conv_block(input, nb_filter, kernal_size=(3, 3, 3), dilation_rate=1,
                padding='same',
                use_bias=False)(x)
     if dropout_rate:
+        x = tf.keras.layers.SpatialDropout3D(dropout_rate)(x)
+    return x
+
+##--------------------DenseBlock-------####
+def dense_block(x, nb_layers, growth_rate, kernal_size=(3, 3, 3),
+                  dilation_list=None,
+                  bottleneck=True, dropout_rate=None, weight_decay=1e-4,
+                  return_concat_list=False):
+    ''' Build a dense_block where the output of each conv_block is fed to subsequent ones
+    Args:
+        x: input tensor
