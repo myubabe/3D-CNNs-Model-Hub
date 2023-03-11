@@ -15,3 +15,17 @@ def up_sampling(input_tensor, scale):
     return net
 
 #######-----Bottleneck
+def Bottleneck(x, nb_filter, increase_factor=4., weight_decay=1e-4):
+    inter_channel = int(nb_filter * increase_factor)
+    x = tf.keras.layers.Conv3D(inter_channel, (1, 1, 1),
+                               kernel_initializer='he_normal',
+                               padding='same',
+                               use_bias=False,
+                               kernel_regularizer=tf.keras.regularizers.l2(weight_decay))(x)
+    x = tf.keras.layers.BatchNormalization(epsilon=1.1e-5)(x)
+    x = tf.nn.relu6(x)
+    return x
+
+#####------------>>> Convolutional Block
+def conv_block(input, nb_filter, kernal_size=(3, 3, 3), dilation_rate=1,
+                 bottleneck=False, dropout_rate=None, weight_decay=1e-4):
