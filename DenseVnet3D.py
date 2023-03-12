@@ -108,3 +108,14 @@ def dense_block(x, nb_layers, growth_rate, kernal_size=(3, 3, 3),
 ###---------transition_block
 def transition_block(input, nb_filter, compression=1.0, weight_decay=1e-4,
                        pool_kernal=(3, 3, 3), pool_strides=(2, 2, 2)):
+    ''' Apply BatchNorm, Relu 1x1, Conv3D, optional compression, dropout and Maxpooling3D
+    Args:
+        input: input tensor
+        nb_filter: number of filters
+        compression: calculated as 1 - reduction. Reduces the number of feature maps
+                    in the transition block.
+        dropout_rate: dropout rate
+        weight_decay: weight decay factor
+    Returns: keras tensor, after applying batch_norm, relu-conv, dropout, maxpool
+    '''
+
