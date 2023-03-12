@@ -119,3 +119,19 @@ def transition_block(input, nb_filter, compression=1.0, weight_decay=1e-4,
     Returns: keras tensor, after applying batch_norm, relu-conv, dropout, maxpool
     '''
 
+
+    x =tf.keras.layers.BatchNormalization(epsilon=1.1e-5)(input)
+    x = tf.nn.relu6(x)
+    x = tf.keras.layers.Conv3D(int(nb_filter * compression), (1, 1, 1),
+               kernel_initializer='he_normal',
+               padding='same',
+               use_bias=False,
+               kernel_regularizer=tf.keras.regularizers.l2(weight_decay))(x)
+    x = tf.keras.layers.AveragePooling3D(pool_kernal, strides=pool_strides)(x)
+
+    return x
+
+###---Trasnsition up block
+def transition_up_block(input, nb_filters, compression=1.0,
+                          kernal_size=(3, 3, 3), pool_strides=(2, 2, 2),
+                          type='deconv', weight_decay=1E-4):
