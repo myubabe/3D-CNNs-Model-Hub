@@ -70,3 +70,25 @@ def dense_block(x, nb_layers, growth_rate, kernal_size=(3, 3, 3),
     ''' Build a dense_block where the output of each conv_block is fed to subsequent ones
     Args:
         x: input tensor
+        nb_layers: the number of layers of conv_block to append to the model.
+        nb_filter: number of filters
+        growth_rate: growth rate
+        bottleneck: bottleneck block
+        dropout_rate: dropout rate
+        weight_decay: weight decay factor
+        grow_nb_filters: flag to decide to allow number of filters to grow
+        return_concat_list: return the list of feature maps along with the actual output
+    Returns: tensor with nb_layers of conv_block appended
+    '''
+
+    if dilation_list is None:
+        dilation_list = [1] * nb_layers
+    elif type(dilation_list) is int:
+        dilation_list = [dilation_list] * nb_layers
+    else:
+        if len(dilation_list) != nb_layers:
+            raise ('the length of dilation_list should be equal to nb_layers %d' % nb_layers)
+
+    x_list = [x]
+
+    for i in range(nb_layers):
