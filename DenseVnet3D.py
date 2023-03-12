@@ -92,3 +92,19 @@ def dense_block(x, nb_layers, growth_rate, kernal_size=(3, 3, 3),
     x_list = [x]
 
     for i in range(nb_layers):
+        cb = conv_block(x, growth_rate, kernal_size, dilation_list[i],
+                          bottleneck, dropout_rate, weight_decay)
+        x_list.append(cb)
+        if i == 0:
+            x = cb
+        else:
+            x = tf.keras.layers.concatenate([x, cb], axis=-1)
+
+    if return_concat_list:
+        return x, x_list
+    else:
+        return x
+
+###---------transition_block
+def transition_block(input, nb_filter, compression=1.0, weight_decay=1e-4,
+                       pool_kernal=(3, 3, 3), pool_strides=(2, 2, 2)):
