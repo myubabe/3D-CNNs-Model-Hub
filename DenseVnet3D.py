@@ -135,3 +135,21 @@ def transition_block(input, nb_filter, compression=1.0, weight_decay=1e-4,
 def transition_up_block(input, nb_filters, compression=1.0,
                           kernal_size=(3, 3, 3), pool_strides=(2, 2, 2),
                           type='deconv', weight_decay=1E-4):
+    ''' SubpixelConvolutional Upscaling (factor = 2)
+    Args:
+        input: tensor
+        nb_filters: number of layers
+        type: can be 'upsampling', 'subpixel', 'deconv'. Determines type of upsampling performed
+        weight_decay: weight decay factor
+    Returns: keras tensor, after applying upsampling operation.
+    '''
+
+    if type == 'upsampling':
+        x = tf.keras.layers.UpSampling3D(size=kernal_size, interpolation='bilinear')(input)
+        x = tf.keras.layers.BatchNormalization(epsilon=1.1e-5)(x)
+        x = tf.nn.relu6(x)
+        x = tf.keras.layers.Conv3D(int(nb_filters * compression), (1, 1, 1),
+                   kernel_initializer='he_normal',
+                   padding='same',
+                   use_bias=False,
+                   kernel_regularizer=tf.keras.regularizers.l2(weight_decay))(x)
