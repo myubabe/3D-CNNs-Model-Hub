@@ -153,3 +153,20 @@ def transition_up_block(input, nb_filters, compression=1.0,
                    padding='same',
                    use_bias=False,
                    kernel_regularizer=tf.keras.regularizers.l2(weight_decay))(x)
+
+    else:
+        x = tf.keras.layers.Conv3DTranspose(int(nb_filters * compression),
+                            kernal_size,
+                            strides=pool_strides,
+                            activation='relu',
+                            padding='same',
+                            kernel_initializer='he_normal', kernel_regularizer=tf.keras.regularizers.l2(weight_decay))(input)
+
+    return x
+
+
+
+def DenseVnet3D(inputs,
+                nb_classes=1,
+                encoder_nb_layers=(5, 8, 8),
+                growth_rate=(4, 8, 12),
