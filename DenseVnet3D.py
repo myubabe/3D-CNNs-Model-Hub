@@ -170,3 +170,21 @@ def DenseVnet3D(inputs,
                 nb_classes=1,
                 encoder_nb_layers=(5, 8, 8),
                 growth_rate=(4, 8, 12),
+                dilation_list=(5, 3, 1),
+                dropout_rate=0.25,
+                weight_decay=1e-4,
+                init_conv_filters=24):
+    """ 3D DenseVNet Implementation by f.i.tushar, tf 2.0.
+        This is a tensorflow 2.0 Implementation of paper:
+        Gibson et al., "Automatic multi-organ segmentation on abdominal CT with
+        dense V-networks" 2018.
+
+        Reference Implementation: vision4med :i) https://github.com/baibaidj/vision4med/blob/5c23f57c2836bfabd7bd95a024a0a0b776b181b5/nets/DenseVnet.py
+                                             ii) https://niftynet.readthedocs.io/en/dev/_modules/niftynet/network/dense_vnet.html#DenseVNet
+
+    Input
+      |
+      --[ DFS ]-----------------------[ Conv ]------------[ Conv ]------[+]-->
+           |                                       |  |              |
+           -----[ DFS ]---------------[ Conv ]------  |              |
+                   |                                  |              |
