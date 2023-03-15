@@ -197,3 +197,19 @@ def DenseVnet3D(inputs,
         growth_rate: Number of filters in each DenseBlock
         dilation_list=Dilation rate each level
         dropout_rate: dropout rate
+        weight_decay: weight decay
+    Returns: Returns the Segmentation Prediction of Given Input Shape
+    """
+    #--|Getting the Input
+    img_input = inputs
+    input_shape = tf.shape(img_input) # Input shape
+    nb_dense_block = len(encoder_nb_layers)# Convert tuple to list
+
+    # Initial convolution
+    x = tf.keras.layers.Conv3D(init_conv_filters, (5, 5, 5),
+               strides=2,
+               kernel_initializer='he_normal',
+               padding='same',
+               name='initial_conv3D',
+               use_bias=False,
+               kernel_regularizer=tf.keras.regularizers.l2(weight_decay))(img_input)
