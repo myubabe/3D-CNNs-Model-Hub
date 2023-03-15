@@ -188,3 +188,12 @@ def DenseVnet3D(inputs,
            |                                       |  |              |
            -----[ DFS ]---------------[ Conv ]------  |              |
                    |                                  |              |
+                   -----[ DFS ]-------[ Conv ]---------              |
+                                                          [ Prior ]---
+    Args:
+        inputs: Input , input shape should be (Batch,D,H,W,channels)
+        nb_classes: number of classes
+        encoder_nb_layers: Number of Layer in each dense_block
+        growth_rate: Number of filters in each DenseBlock
+        dilation_list=Dilation rate each level
+        dropout_rate: dropout rate
