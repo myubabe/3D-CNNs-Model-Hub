@@ -213,3 +213,13 @@ def DenseVnet3D(inputs,
                name='initial_conv3D',
                use_bias=False,
                kernel_regularizer=tf.keras.regularizers.l2(weight_decay))(img_input)
+    x = tf.keras.layers.BatchNormalization(epsilon=1.1e-5)(x)
+    x = tf.nn.relu6(x)
+
+    #Making the skiplist for concationatin
+    skip_list = []
+
+    # Add dense blocks
+    for block_idx in range(nb_dense_block):
+        '''
+        |--Input for dense_block is as following
