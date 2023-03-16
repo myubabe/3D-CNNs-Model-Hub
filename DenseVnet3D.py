@@ -223,3 +223,20 @@ def DenseVnet3D(inputs,
     for block_idx in range(nb_dense_block):
         '''
         |--Input for dense_block is as following
+        |---#x=Input,
+            #encoder_nb_layers[block_idx]=Number of layer in a dense_block
+            #growth_rate[block_idx]= Number of Filter in that DenseBlock
+            #dilation_list= Dilation Rate.
+
+        '''
+        x = dense_block(x, encoder_nb_layers[block_idx],
+                              growth_rate[block_idx],
+                              kernal_size=(3, 3, 3),
+                              dilation_list=dilation_list[block_idx],
+                              dropout_rate=dropout_rate,
+                              weight_decay=weight_decay,
+                              )
+
+        # Skip connection
+        skip_list.append(x)
+        #Pooling
