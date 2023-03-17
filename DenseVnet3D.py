@@ -282,3 +282,6 @@ inputs = tf.keras.Input(shape=INPUT_PATCH_SIZE, name='CT')
 
 #Model_3D=DenseVnet3D(inputs,nb_classes=1,encoder_nb_layers=(5, 8, 8),growth_rate=(4, 8, 12),dilation_list=(5, 3, 1))
 Model_3D=DenseVnet3D(inputs,nb_classes=1,encoder_nb_layers=(4, 8, 16),growth_rate=(12,24,24),dilation_list=(5, 10, 10),dropout_rate=0.25)
+Model_3D.summary()
+tf.keras.utils.plot_model(Model_3D, 'DenseVnet3D.png',show_shapes=True)
+'''
