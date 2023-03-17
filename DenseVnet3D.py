@@ -265,3 +265,20 @@ def DenseVnet3D(inputs,
     x = up_sampling(x, scale=2)
 
     ####------Prediction---------------###
+    if nb_classes == 1:
+        x = tf.keras.layers.Conv3D(nb_classes, 1, activation='sigmoid', padding='same', use_bias=False)(x)
+    elif nb_classes > 1:
+        x = tf.keras.layers.Conv3D(nb_classes + 1, 1, activation='softmax', padding='same', use_bias=False)(x)
+    print(x)
+
+    # Create model.
+    model = tf.keras.Model(img_input, x, name='DenseVnet3D')
+    return model
+'''
+###################----Demo Usages----#############
+INPUT_PATCH_SIZE=[384,192,192,1]
+NUMBER_OF_CLASSES=1
+inputs = tf.keras.Input(shape=INPUT_PATCH_SIZE, name='CT')
+
+#Model_3D=DenseVnet3D(inputs,nb_classes=1,encoder_nb_layers=(5, 8, 8),growth_rate=(4, 8, 12),dilation_list=(5, 3, 1))
+Model_3D=DenseVnet3D(inputs,nb_classes=1,encoder_nb_layers=(4, 8, 16),growth_rate=(12,24,24),dilation_list=(5, 10, 10),dropout_rate=0.25)
