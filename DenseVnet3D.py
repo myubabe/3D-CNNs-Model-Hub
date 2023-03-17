@@ -240,3 +240,16 @@ def DenseVnet3D(inputs,
         # Skip connection
         skip_list.append(x)
         #Pooling
+        x = tf.keras.layers.AveragePooling3D((2, 2, 2))(x)
+        # x = __transition_block(x, nb_filter,compression=compression,weight_decay=weight_decay,pool_kernal=(3, 3, 3),pool_strides=(2, 2, 2))
+
+
+    ##Convolutiion and third Resolution layer and Updample.
+    x_level3 = conv_block(skip_list[-1], growth_rate[2], bottleneck=True, dropout_rate=dropout_rate)
+    x_level3 = up_sampling(x_level3, scale=4)
+    # x_level3 = UpSampling3D(size = (4,4,4))(x_level3)
+
+    ##Convolutiion and 2nd Resolution layer and Updample.
+    x_level2 = conv_block(skip_list[-2], growth_rate[1], bottleneck=True, dropout_rate=dropout_rate)
+    x_level2 = up_sampling(x_level2, scale=2)
+    # x_level2 = UpSampling3D(size=(2, 2, 2))(x_level2)
