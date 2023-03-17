@@ -253,3 +253,15 @@ def DenseVnet3D(inputs,
     x_level2 = conv_block(skip_list[-2], growth_rate[1], bottleneck=True, dropout_rate=dropout_rate)
     x_level2 = up_sampling(x_level2, scale=2)
     # x_level2 = UpSampling3D(size=(2, 2, 2))(x_level2)
+
+    ##Convolutiion and first Resolution layer
+    x_level1 = conv_block(skip_list[-3], growth_rate[0], bottleneck=True, dropout_rate=dropout_rate)
+    #x_level1 = up_sampling(x_level1, scale=2)
+    x = tf.keras.layers.Concatenate()([x_level3, x_level2, x_level1])
+
+    ###--Final Convolution---
+    x = conv_block(x, 24, bottleneck=False, dropout_rate=dropout_rate)
+    ##----Upsampling--TheFinal Output----#####
+    x = up_sampling(x, scale=2)
+
+    ####------Prediction---------------###
