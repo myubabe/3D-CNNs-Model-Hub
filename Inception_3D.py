@@ -4,4 +4,4 @@ from tensorflow.keras.layers import Input, Conv3D, MaxPooling3D, Dense, GlobalMa
 from tensorflow.keras.optimizers import Adam
 from config import *
 
-def conv_bn_relu(x, filters, kernel
+def conv_bn_relu(x, filters, kernel_size=(3, 3,
