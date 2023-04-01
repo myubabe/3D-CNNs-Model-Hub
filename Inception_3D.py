@@ -10,3 +10,4 @@ def conv_bn_relu(x, filters, kernel_size=(3, 3, 3), strides=(1, 1, 1), padding='
     x = Activation('relu')(x)
     return x
 
+def inception
