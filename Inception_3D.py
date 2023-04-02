@@ -12,4 +12,4 @@ def conv_bn_relu(x, filters, kernel_size=(3, 3, 3), strides=(1, 1, 1), padding='
 
 def inception_base(x):
     x = conv_bn_relu(x, filters=32)
-    x = conv_b
+    x = conv_bn_relu(x, filters=
