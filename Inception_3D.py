@@ -15,4 +15,4 @@ def inception_base(x):
     x = conv_bn_relu(x, filters=32)
     x = conv_bn_relu(x, filters=64)
 
-    b0 = MaxPoo
+    b0 = MaxPooling3D(pool_
