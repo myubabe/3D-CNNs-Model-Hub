@@ -17,4 +17,4 @@ def inception_base(x):
 
     b0 = MaxPooling3D(pool_size=(2, 2, 2))(x)
     b1 = conv_bn_relu(x, 64, strides=(2, 2, 2))
-    x = Co
+    x = Concatenate(axis=4)([b0, b
