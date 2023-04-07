@@ -19,4 +19,5 @@ def inception_base(x):
     b1 = conv_bn_relu(x, 64, strides=(2, 2, 2))
     x = Concatenate(axis=4)([b0, b1])
 
-    print('inc
+    print('inception_base')
+    pr
