@@ -20,4 +20,5 @@ def inception_base(x):
     x = Concatenate(axis=4)([b0, b1])
 
     print('inception_base')
-    print(b0.get_shape(
+    print(b0.get_shape())
+    pri
