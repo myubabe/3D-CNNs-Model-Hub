@@ -21,4 +21,4 @@ def inception_base(x):
 
     print('inception_base')
     print(b0.get_shape())
-    pri
+    print(b1.get_sha
