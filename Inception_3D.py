@@ -22,4 +22,6 @@ def inception_base(x):
     print('inception_base')
     print(b0.get_shape())
     print(b1.get_shape())
-    print(x.get_s
+    print(x.get_shape())
+
+   
