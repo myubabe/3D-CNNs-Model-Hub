@@ -24,4 +24,6 @@ def inception_base(x):
     print(b1.get_shape())
     print(x.get_shape())
 
-   
+    return x
+
+def
