@@ -26,4 +26,4 @@ def inception_base(x):
 
     return x
 
-def
+def inception_block(x, f
