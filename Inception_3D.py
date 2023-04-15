@@ -27,3 +27,4 @@ def inception_base(x):
     return x
 
 def inception_block(x, filters=256):
+    shrinka
