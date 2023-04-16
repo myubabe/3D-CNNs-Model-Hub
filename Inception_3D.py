@@ -27,4 +27,4 @@ def inception_base(x):
     return x
 
 def inception_block(x, filters=256):
-    shrinkaged_filters = int(filters * INCE
+    shrinkaged_filters = int(filters * INCEPTION_ENABLE_DEPTHWISE_SEP
