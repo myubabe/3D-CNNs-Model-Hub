@@ -28,3 +28,4 @@ def inception_base(x):
 
 def inception_block(x, filters=256):
     shrinkaged_filters = int(filters * INCEPTION_ENABLE_DEPTHWISE_SEPARABLE_CONV_SHRINKAGE)
+    b0 = conv_bn
