@@ -30,4 +30,4 @@ def inception_block(x, filters=256):
     shrinkaged_filters = int(filters * INCEPTION_ENABLE_DEPTHWISE_SEPARABLE_CONV_SHRINKAGE)
     b0 = conv_bn_relu(x, filters=filters, kernel_size=(1, 1, 1))
 
-    
+    b1 = conv_bn_relu(
