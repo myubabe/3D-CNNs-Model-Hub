@@ -42,4 +42,5 @@ def inception_block(x, filters=256):
 
     bs = [b0, b1, b2, b3]
 
-    print('inception_bl
+    print('inception_block')
+    pr
