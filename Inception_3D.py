@@ -43,4 +43,4 @@ def inception_block(x, filters=256):
     bs = [b0, b1, b2, b3]
 
     print('inception_block')
-    pr
+    print(b0.get_shape())
