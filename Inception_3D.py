@@ -48,4 +48,4 @@ def inception_block(x, filters=256):
     print(b2.get_shape())
     print(b3.get_shape())
 
-    if INCEPTION
+    if INCEPTION_ENABLE_SPATI
