@@ -54,4 +54,4 @@ def inception_block(x, filters=256):
         b4 = conv_bn_relu(b4, filters=filters, kernel_size=(1, 5, 1))
         b4 = conv_bn_relu(b4, filters=filters, kernel_size=(1, 1, 5))
         bs.append(b4)
-        p
+        print(b4.get_sha
