@@ -57,4 +57,4 @@ def inception_block(x, filters=256):
         print(b4.get_shape())
 
     x = Concatenate(axis=4)(bs)
-    pr
+    print(x.get_sh
