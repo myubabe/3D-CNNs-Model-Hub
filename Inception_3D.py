@@ -61,4 +61,5 @@ def inception_block(x, filters=256):
 
     return x
 
-def reduction_block(x,
+def reduction_block(x, filters=256):
+ 
