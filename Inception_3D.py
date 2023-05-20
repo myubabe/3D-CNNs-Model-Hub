@@ -62,4 +62,4 @@ def inception_block(x, filters=256):
     return x
 
 def reduction_block(x, filters=256):
-    b0 = conv_bn_relu(x
+    b0 = conv_bn_relu(x, filters=fi
