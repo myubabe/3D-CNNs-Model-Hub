@@ -68,4 +68,4 @@ def reduction_block(x, filters=256):
     b1 = conv_bn_relu(b1, filters=filters, kernel_size=(3, 3, 3))
     b1 = conv_bn_relu(b1, filters=filters, kernel_size=(3, 3, 3), strides=(2, 2, 2), padding='same')
 
-    
+    b2 = MaxPooli
