@@ -71,4 +71,4 @@ def reduction_block(x, filters=256):
     b2 = MaxPooling3D(pool_size=(3, 3, 3), strides=(2, 2, 2), padding='same')(x)
     b2 = conv_bn_relu(b2, filters=filters, kernel_size=(1, 1, 1))
 
-    bs = [b
+    bs = [b0, b1, b2
