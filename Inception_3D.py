@@ -74,4 +74,4 @@ def reduction_block(x, filters=256):
     bs = [b0, b1, b2]
 
     print('reduction_block')
-    print(b0
+    print(b0.get_shape())
