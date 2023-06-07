@@ -75,4 +75,5 @@ def reduction_block(x, filters=256):
 
     print('reduction_block')
     print(b0.get_shape())
-    print(b1.get_sha
+    print(b1.get_shape())
+    pri
