@@ -79,4 +79,4 @@ def reduction_block(x, filters=256):
     print(b2.get_shape())
 
     if INCEPTION_ENABLE_SPATIAL_SEPARABLE_CONV:
-        b
+        b3 = conv_bn_
