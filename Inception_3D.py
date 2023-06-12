@@ -79,4 +79,5 @@ def reduction_block(x, filters=256):
     print(b2.get_shape())
 
     if INCEPTION_ENABLE_SPATIAL_SEPARABLE_CONV:
-        b3 = conv_bn_relu(x, filters=filters, kernel_size
+        b3 = conv_bn_relu(x, filters=filters, kernel_size=(1, 1, 1))
+ 
