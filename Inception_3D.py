@@ -80,4 +80,4 @@ def reduction_block(x, filters=256):
 
     if INCEPTION_ENABLE_SPATIAL_SEPARABLE_CONV:
         b3 = conv_bn_relu(x, filters=filters, kernel_size=(1, 1, 1))
-        b3 = conv_bn_relu(b3, filt
+        b3 = conv_bn_relu(b3, filters=filters, ke
