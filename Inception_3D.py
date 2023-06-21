@@ -83,4 +83,4 @@ def reduction_block(x, filters=256):
         b3 = conv_bn_relu(b3, filters=filters, kernel_size=(5, 1, 1))
         b3 = conv_bn_relu(b3, filters=filters, kernel_size=(1, 5, 1))
         b3 = conv_bn_relu(b3, filters=filters, kernel_size=(1, 1, 5))
-        b3 = conv_bn_relu(b3, filters=filters, kernel_size=(3, 3, 3), strides
+        b3 = conv_bn_relu(b3, filters=filters, kernel_size=(3, 3, 3), strides=(2, 2, 2)
