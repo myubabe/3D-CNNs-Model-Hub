@@ -87,4 +87,4 @@ def reduction_block(x, filters=256):
         bs.append(b3)
         print(b3.get_shape())
 
-   
+    x = Concatena
