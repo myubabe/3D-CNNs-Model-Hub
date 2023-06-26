@@ -92,4 +92,5 @@ def reduction_block(x, filters=256):
 
     return x
 
-def Inception3D(inputs,num_classes)
+def Inception3D(inputs,num_classes):
+    input
