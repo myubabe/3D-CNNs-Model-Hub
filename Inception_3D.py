@@ -96,3 +96,5 @@ def Inception3D(inputs,num_classes):
     inputs = inputs
     # Make inception base
     x = inception_base(inputs)
+
+    for i 
