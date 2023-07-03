@@ -98,4 +98,6 @@ def Inception3D(inputs,num_classes):
     x = inception_base(inputs)
 
     for i in range(INCEPTION_BLOCKS):
-        x = inception_block(x, filters=INCEPTION_KEEP_FILTER
+        x = inception_block(x, filters=INCEPTION_KEEP_FILTERS)
+
+        if (
