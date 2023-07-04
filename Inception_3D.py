@@ -100,4 +100,4 @@ def Inception3D(inputs,num_classes):
     for i in range(INCEPTION_BLOCKS):
         x = inception_block(x, filters=INCEPTION_KEEP_FILTERS)
 
-        if (i + 1) % IN
+        if (i + 1) % INCEPTION_REDUCTION
