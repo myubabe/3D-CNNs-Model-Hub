@@ -103,4 +103,4 @@ def Inception3D(inputs,num_classes):
         if (i + 1) % INCEPTION_REDUCTION_STEPS == 0 and i != INCEPTION_BLOCKS - 1:
             x = reduction_block(x, filters=INCEPTION_KEEP_FILTERS // 2)
 
-    p
+    print('top')
