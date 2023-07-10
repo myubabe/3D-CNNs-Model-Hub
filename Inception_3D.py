@@ -105,4 +105,4 @@ def Inception3D(inputs,num_classes):
 
     print('top')
     x = GlobalMaxPooling3D()(x)
-    x = Dropou
+    x = Dropout(INCEPTION_DROPO
