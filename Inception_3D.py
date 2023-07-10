@@ -104,3 +104,4 @@ def Inception3D(inputs,num_classes):
             x = reduction_block(x, filters=INCEPTION_KEEP_FILTERS // 2)
 
     print('top')
+    x = GlobalMaxPool
