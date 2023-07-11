@@ -106,4 +106,4 @@ def Inception3D(inputs,num_classes):
     print('top')
     x = GlobalMaxPooling3D()(x)
     x = Dropout(INCEPTION_DROPOUT)(x)
-    x = Dense(un
+    x = Dense(units=num_classes,activ
