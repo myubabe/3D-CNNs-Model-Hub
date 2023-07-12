@@ -107,4 +107,5 @@ def Inception3D(inputs,num_classes):
     x = GlobalMaxPooling3D()(x)
     x = Dropout(INCEPTION_DROPOUT)(x)
     x = Dense(units=num_classes,activation='sigmoid')(x)
-    model = Model(inputs=inputs, 
+    model = Model(inputs=inputs, outputs=x)
+    return 
