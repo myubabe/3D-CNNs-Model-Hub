@@ -108,4 +108,4 @@ def Inception3D(inputs,num_classes):
     x = Dropout(INCEPTION_DROPOUT)(x)
     x = Dense(units=num_classes,activation='sigmoid')(x)
     model = Model(inputs=inputs, outputs=x)
-    return 
+    return model
