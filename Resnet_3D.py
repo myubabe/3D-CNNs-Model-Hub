@@ -26,3 +26,17 @@ def Residual_Block(inputs,
                    'bias_initializer': bias_initializer,
                    'kernel_regularizer': kernel_regularizer,
                    'bias_regularizer': bias_regularizer}
+
+    in_filters = inputs.get_shape().as_list()[-1]
+    x=inputs
+    orig_x=x
+
+    ##building
+    # Adjust the strided conv kernel size to prevent losing information
+    k = [s * 2 if s > 1 else k for k, s in zip(kernel_size, strides)]
+
+    if np.prod(strides) != 1:
+            orig_x = tf.keras.layers.MaxPool3D(pool_size=strides,strides=strides,padding='valid')(orig_x)
+
+    ##sub-unit-0
+    x=tf.keras.layers.BatchNormalization()(x)
