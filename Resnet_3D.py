@@ -16,3 +16,13 @@ def Residual_Block(inputs,
                  kernel_initializer=tf.keras.initializers.VarianceScaling(distribution='uniform'),
                  bias_initializer=tf.zeros_initializer(),
                  kernel_regularizer=tf.keras.regularizers.l2(l=0.001),
+                 bias_regularizer=None,
+                 **kwargs):
+
+
+    conv_params={'padding': 'same',
+                   'use_bias': use_bias,
+                   'kernel_initializer': kernel_initializer,
+                   'bias_initializer': bias_initializer,
+                   'kernel_regularizer': kernel_regularizer,
+                   'bias_regularizer': bias_regularizer}
