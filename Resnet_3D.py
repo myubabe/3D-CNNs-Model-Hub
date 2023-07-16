@@ -40,3 +40,18 @@ def Residual_Block(inputs,
 
     ##sub-unit-0
     x=tf.keras.layers.BatchNormalization()(x)
+    x=activation(x)
+    x=tf.keras.layers.Conv3D(filters=out_filters,kernel_size=k,strides=strides,**conv_params)(x)
+
+    ##sub-unit-1
+    x=tf.keras.layers.BatchNormalization()(x)
+    x=activation(x)
+    x=tf.keras.layers.Conv3D(filters=out_filters,kernel_size=kernel_size,strides=(1,1,1),**conv_params)(x)
+
+        # Handle differences in input and output filter sizes
+    if in_filters < out_filters:
+        orig_x = tf.pad(tensor=orig_x,paddings=[[0, 0]] * (len(x.get_shape().as_list()) - 1) + [[
+                    int(np.floor((out_filters - in_filters) / 2.)),
+                    int(np.ceil((out_filters - in_filters) / 2.))]])
+
+    elif in_filters > out_filters:
