@@ -86,3 +86,18 @@ def Resnet3D(inputs,
     ##building
     k = [s * 2 if s > 1 else 3 for s in strides[0]]
 
+
+    #Input
+    x = inputs
+    #1st-convo
+    x=tf.keras.layers.Conv3D(filters[0], k, strides[0], **conv_params)(x)
+
+    for res_scale in range(1, len(filters)):
+        x = Residual_Block(
+                inputs=x,
+                out_filters=filters[res_scale],
+                strides=strides[res_scale],
+                activation=activation,
+                name='unit_{}_0'.format(res_scale))
+        for i in range(1, num_res_units):
+            x = Residual_Block(
