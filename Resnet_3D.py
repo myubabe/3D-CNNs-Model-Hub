@@ -72,3 +72,17 @@ def Resnet3D(inputs,
               activation=TRAIN_CLASSIFY_ACTICATION,
               kernel_initializer=TRAIN_KERNAL_INITIALIZER,
               bias_initializer=tf.zeros_initializer(),
+              kernel_regularizer=tf.keras.regularizers.l2(l=0.001),
+              bias_regularizer=None,
+              **kwargs):
+    conv_params = {'padding': 'same',
+                   'use_bias': use_bias,
+                   'kernel_initializer': kernel_initializer,
+                   'bias_initializer': bias_initializer,
+                   'kernel_regularizer': kernel_regularizer,
+                   'bias_regularizer': bias_regularizer}
+
+
+    ##building
+    k = [s * 2 if s > 1 else 3 for s in strides[0]]
+
