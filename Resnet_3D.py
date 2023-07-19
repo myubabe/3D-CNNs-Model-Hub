@@ -101,3 +101,16 @@ def Resnet3D(inputs,
                 name='unit_{}_0'.format(res_scale))
         for i in range(1, num_res_units):
             x = Residual_Block(
+                    inputs=x,
+                    out_filters=filters[res_scale],
+                    strides=(1, 1, 1),
+                    activation=activation,
+                    name='unit_{}_{}'.format(res_scale, i))
+
+
+    x=tf.keras.layers.BatchNormalization()(x)
+    x=activation(x)
+    #axis = tuple(range(len(x.get_shape().as_list())))[1:-1]
+    #x = tf.reduce_mean(x, axis=axis, name='global_avg_pool')
+    x=tf.keras.layers.GlobalAveragePooling3D()(x)
+    x =tf.keras.layers.Dropout(0.5)(x)
