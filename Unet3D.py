@@ -4,4 +4,5 @@ from tensorflow.keras.layers import Conv3D, Input, MaxPooling3D, Dropout, concat
 import tensorflow as tf
 
 def Unet3D(inputs,num_classes):
-  
+    x=inputs
+    con
