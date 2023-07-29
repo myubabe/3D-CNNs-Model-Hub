@@ -5,4 +5,4 @@ import tensorflow as tf
 
 def Unet3D(inputs,num_classes):
     x=inputs
-    con
+    conv1 = Conv3D(8, 3,
