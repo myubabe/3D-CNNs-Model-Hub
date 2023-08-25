@@ -20,4 +20,4 @@ def Unet3D(inputs,num_classes):
     pool4 = MaxPooling3D(pool_size=(2, 2, 2))(drop4)
 
     conv5 = Conv3D(128, 3, activation = 'relu', padding = 'same')(pool4)
-    conv5 = C
+    conv5 = Conv3D(128, 3, a
