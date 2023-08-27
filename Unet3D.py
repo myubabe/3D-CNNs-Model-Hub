@@ -21,4 +21,6 @@ def Unet3D(inputs,num_classes):
 
     conv5 = Conv3D(128, 3, activation = 'relu', padding = 'same')(pool4)
     conv5 = Conv3D(128, 3, activation = 'relu', padding = 'same')(conv5)
-    drop5 = Dropout(0.5)(
+    drop5 = Dropout(0.5)(conv5)
+
+    up6 =
