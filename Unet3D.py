@@ -28,4 +28,4 @@ def Unet3D(inputs,num_classes):
     conv6 = Conv3D(64, 3, activation = 'relu', padding = 'same')(merge6)
     conv6 = Conv3D(64, 3, activation = 'relu', padding = 'same')(conv6)
 
-    up7 = Conv3D(32, 2, activation = 'relu', padding = 'same')
+    up7 = Conv3D(32, 2, activation = 'relu', padding = 'same')(UpSampling3D(siz
