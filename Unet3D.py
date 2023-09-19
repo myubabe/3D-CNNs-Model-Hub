@@ -34,4 +34,4 @@ def Unet3D(inputs,num_classes):
     conv7 = Conv3D(32, 3, activation = 'relu', padding = 'same')(conv7)
 
     up8 = Conv3D(16, 2, activation = 'relu', padding = 'same')(UpSampling3D(size = (2,2,2))(conv7))
-    mer
+    merge8 = conc
