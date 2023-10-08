@@ -43,4 +43,4 @@ def Unet3D(inputs,num_classes):
     conv9 = Conv3D(8, 3, activation = 'relu', padding = 'same')(merge9)
     conv9 = Conv3D(8, 3, activation = 'relu', padding = 'same')(conv9)
     conv10 = Conv3D(1, 1, activation = 'sigmoid')(conv9)
-    mode
+    model = Model
