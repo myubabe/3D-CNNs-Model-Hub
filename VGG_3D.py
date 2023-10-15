@@ -28,3 +28,16 @@ def VGG3D(inputs,num_classes):
 
     x = Conv3D(128, (3, 3, 3), padding='same', activation='relu')(x)
     x = Conv3D(128, (3, 3, 3), padding='same', activation='relu')(x)
+    x = Conv3D(128, (3, 3, 3), padding='same', activation='relu')(x)
+    x = MaxPooling3D(pool_size=(2, 2, 2))(x)
+
+    if TRAIN_CLASSIFY_USE_BN:
+        x = BatchNormalization()(x)
+
+    x = Conv3D(256, (3, 3, 3), padding='same', activation='relu')(x)
+    x = Conv3D(256, (3, 3, 3), padding='same', activation='relu')(x)
+    x = Conv3D(256, (3, 3, 3), padding='same', activation='relu')(x)
+    x = MaxPooling3D(pool_size=(2, 2, 2))(x)
+
+    if TRAIN_CLASSIFY_USE_BN:
+        x = BatchNormalization()(x)
