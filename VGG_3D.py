@@ -41,3 +41,14 @@ def VGG3D(inputs,num_classes):
 
     if TRAIN_CLASSIFY_USE_BN:
         x = BatchNormalization()(x)
+
+    x = Conv3D(512, (3, 3, 3), padding='same', activation='relu')(x)
+    x = Conv3D(512, (3, 3, 3), padding='same', activation='relu')(x)
+    x = Conv3D(512, (3, 3, 3), padding='same', activation='relu')(x)
+    x = GlobalMaxPooling3D()(x)
+
+    x = Dense(32, activation='relu')(x)
+    x = Dropout(0.5)(x)
+    x = Dense(units=num_classes,activation='sigmoid')(x)
+    model = Model(inputs=inputs, outputs=x)
+    return model
