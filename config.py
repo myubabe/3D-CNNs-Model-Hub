@@ -1,3 +1,5 @@
 import tensorflow as tf
 import math
-###---Num
+###---Number-of-GPU
+
+##-----Ne
