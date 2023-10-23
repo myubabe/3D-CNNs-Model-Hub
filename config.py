@@ -3,3 +3,4 @@ import math
 ###---Number-of-GPU
 
 ##-----Network Configuration----#####
+NUMBER_OF_CL
