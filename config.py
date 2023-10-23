@@ -4,4 +4,4 @@ import math
 
 ##-----Network Configuration----#####
 NUMBER_OF_CLASSES=5
-INPUT_PATCH_
+INPUT_PATCH_SIZE=(96,12
