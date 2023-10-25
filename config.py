@@ -5,4 +5,5 @@ import math
 ##-----Network Configuration----#####
 NUMBER_OF_CLASSES=5
 INPUT_PATCH_SIZE=(96,128,128, 1)
-##------R
+##------Resnet3D----####
+T
