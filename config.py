@@ -6,4 +6,4 @@ import math
 NUMBER_OF_CLASSES=5
 INPUT_PATCH_SIZE=(96,128,128, 1)
 ##------Resnet3D----####
-T
+TRAIN_NUM_RES
