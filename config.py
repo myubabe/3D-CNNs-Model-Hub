@@ -14,3 +14,4 @@ TRAIN_KERNAL_INITIALIZER=tf.keras.initializers.VarianceScaling(distribution='uni
 #-------DenseNet13D----#####
 # DenseNet
 DENSE_NET_BLOCKS = 3
+DENSE_NET_BL
