@@ -4,4 +4,5 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 
 ## Libraries Needed:
 ```ruby
-* Pyth
+* Python 3.x
+* 
