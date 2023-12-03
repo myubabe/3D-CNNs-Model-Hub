@@ -7,3 +7,5 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 * Python 3.x
 * Tensorflow 2.X
 * Numpy
+* random
+```
