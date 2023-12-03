@@ -10,4 +10,6 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 * random
 ```
 
-## 3D-Models Avail
+## 3D-Models Available:
+
+### Cla
