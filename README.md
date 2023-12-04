@@ -12,4 +12,6 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 
 ## 3D-Models Available:
 
-### Classification
+### Classification:
+```ruby
+* Re
