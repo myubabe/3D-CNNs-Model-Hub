@@ -15,4 +15,4 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 ### Classification:
 ```ruby
 * Resnet_3D.py
-* Dense
+* DenseNet_3D.py
