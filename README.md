@@ -16,3 +16,5 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 ```ruby
 * Resnet_3D.py
 * DenseNet_3D.py
+* VGG_3D.py
+* I
