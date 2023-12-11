@@ -19,4 +19,5 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 * VGG_3D.py
 * Inception_3D.py
 ```
-### Segme
+### Segmentation:
+```
