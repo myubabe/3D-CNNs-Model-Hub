@@ -21,4 +21,5 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 ```
 ### Segmentation:
 ```ruby
-* DenseV
+* DenseVnet3D.py
+* Unet3D.p
