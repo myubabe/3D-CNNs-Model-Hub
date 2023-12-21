@@ -25,4 +25,6 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 * Unet3D.py
 ```
 
-References for the above are available 
+References for the above are available at:
+
+* DenseVnet3D.
