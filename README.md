@@ -27,4 +27,4 @@ This repository includes 3D implementations of commonly used 2D CNNs, filling th
 
 References for the above are available at:
 
-* DenseVnet3D.
+* DenseVnet3D.py -> (https://gith
