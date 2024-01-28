@@ -31,4 +31,5 @@ References for the above are available at:
   
 * Unet3D.py-> (https://github.com/myubabe/3DUnet_tensorflow2.0/)
 
-### How 
+### How to Run
+Confi
