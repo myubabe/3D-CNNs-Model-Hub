@@ -32,4 +32,5 @@ References for the above are available at:
 * Unet3D.py-> (https://github.com/myubabe/3DUnet_tensorflow2.0/)
 
 ### How to Run
-Configure the models based on your needs and GPU's running capability 
+Configure the models based on your needs and GPU's running capability using *config.py*:
+``
