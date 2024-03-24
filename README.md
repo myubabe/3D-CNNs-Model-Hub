@@ -37,3 +37,7 @@ Configure the models based on your needs and GPU's running capability using *con
 ##-----Network Configuration----#####
 NUMBER_OF_CLASSES=5
 INPUT_PATCH_SIZE=(96,128,128, 1)
+
+...
+
+TRAIN_C
